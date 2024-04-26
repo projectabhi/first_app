@@ -9,16 +9,16 @@ import ReactDOM from 'react-dom/client';
 //     return React.createElement('h2',{},'Greetings !!!')
 // }
 
-function Greetings(){
+function Greetings() {
     return (
         <div>
-           <Person />
-           <Message />
+            <Person />
+            <Message />
         </div>
     );
 }
 
-function BookList(){
+function BookList() {
     return (
         <section>
             <Book />
@@ -29,28 +29,28 @@ function BookList(){
     );
 }
 
-const Book = () =>{
+const Book = () => {
     return (
-    <article>
-        <Image />
-        <Title/>
-        <Author />
-    </article>
+        <article>
+            <Image />
+            <Title />
+            <Author />
+        </article>
     );
 }
 
-const Image =() => <h2>image placeholdert</h2>;
-const Title =()=> {
+const Image = () => <h2>image placeholdert</h2>;
+const Title = () => {
     return <h2>Book Title</h2>;
 };
-const Author =()=><h4>Author</h4>
+const Author = () => <h4>Author</h4>
 
 const Person = () => <h2>John Doe</h2>;
-const Message = ()=> {
+const Message = () => {
     return <p>This is modified mesge</p>;
 }
 
-const root=ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 //root.render(<Greetings />)
 root.render(<BookList />)
