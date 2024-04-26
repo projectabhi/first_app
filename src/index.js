@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from 'react-dom/client';
 
+import './index.css'
+
 // function Greetings(){
 //     return <h2>Greeting from the first step</h2>
 // }
@@ -20,7 +22,7 @@ function Greetings() {
 
 function BookList() {
     return (
-        <section>
+        <section className="booklist">
             <Book />
             <Book />
             <Book />
@@ -31,7 +33,7 @@ function BookList() {
 
 const Book = () => {
     return (
-        <article>
+        <article className="book">
             <Image />
             <Title />
             <Author />
@@ -39,7 +41,10 @@ const Book = () => {
     );
 }
 
-const Image = () => <h2>image placeholdert</h2>;
+const Image = () => (<img 
+    src='https://images-na.ssl-images-amazon.com/images/I/913C+MR3S5L._AC_UL600_SR600,400_.jpg' alt="The Woman in Novel"
+     />
+);
 const Title = () => {
     return <h2>Book Title</h2>;
 };
