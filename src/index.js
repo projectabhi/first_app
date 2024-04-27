@@ -3,6 +3,18 @@ import ReactDOM from 'react-dom/client';
 
 import './index.css'
 
+const firstbook={
+    author: "Abhijit Dey",
+    title: "curious",
+    img: './logo192.png'
+ };
+
+ const secondbook={
+    author: "Trisha Dey",
+    title: "housewife",
+    img: 'https://images-na.ssl-images-amazon.com/images/I/913C+MR3S5L._AC_UL600_SR600,400_.jpg'
+ };
+
 // function Greetings(){
 //     return <h2>Greeting from the first step</h2>
 // }
@@ -23,9 +35,9 @@ function Greetings() {
 function BookList() {
     return (
         <section className="booklist">
-            <Book job='developer' />
-            <Book auhtor='Abc' title='Advocate'/>
-            <Book />
+            <Book job={firstbook.job} />
+            <Book auhtor={firstbook.author} title={firstbook.title}/>
+            <Book auhtor={secondbook.author} title={secondbook.title} />
             <Book />
         </section>
     );
@@ -34,10 +46,13 @@ function BookList() {
 const Book = (props) => {
     console.log(props);
     return (
-        <article className="book">
+        <article className='book'>
             <Image />
             <Title />
-            <Author />
+            <Author someFunc />
+            <p>{props.job}</p>
+            <p>{props.auhtor}</p>
+            <p>{props.title}</p>
         </article>
     );
 }
@@ -58,6 +73,8 @@ const Message = () => {
  const someFunc= (p1,p2)=>{
     console.log('calling simeFunc meeage p1-{}, p2-{}',p1,p2);
  };
+
+ 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
