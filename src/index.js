@@ -23,15 +23,16 @@ function Greetings() {
 function BookList() {
     return (
         <section className="booklist">
-            <Book />
-            <Book />
+            <Book job='developer' />
+            <Book auhtor='Abc' title='Advocate'/>
             <Book />
             <Book />
         </section>
     );
 }
 
-const Book = () => {
+const Book = (props) => {
+    console.log(props);
     return (
         <article className="book">
             <Image />
@@ -48,12 +49,15 @@ const Image = () => (<img
 const Title = () => {
     return <h2>Book Title</h2>;
 };
-const Author = () => <h4>Author</h4>
+const Author = () => <h4 style={{color:'#617d98', fontSize:'0.75rem', marginTop: '0.5rem'}}>Author</h4>
 
 const Person = () => <h2>John Doe</h2>;
 const Message = () => {
     return <p>This is modified mesge</p>;
 }
+ const someFunc= (p1,p2)=>{
+    console.log('calling simeFunc meeage p1-{}, p2-{}',p1,p2);
+ };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
