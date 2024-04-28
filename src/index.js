@@ -64,18 +64,19 @@ const BookList = (props) => {
     return (
         <section className="booklist">
             {books.map((booksObj) => {
-                const { img, title, author, id } = booksObj;
-                return <Book img={img} title={title} author={author} key={id} />
+                //const { img, title, author } = booksObj;
+                return <Book {...booksObj} key={booksObj.id} />
             })};
         </section>
     );
 };
 
 const Book = (props) => {
-    const { img, title, author, id } = props;
+    const { img, title, author } = props;
+    console.log(props);
     return (<article className='book'>
                 <img src={img} alt={title} />
-                <p>{title}</p>
+                <p>{author}</p>
             </article>);
 };
 
@@ -96,9 +97,21 @@ const someFunc = (p1, p2) => {
     console.log('calling simeFunc meeage p1-{}, p2-{}', p1, p2);
 };
 
-
-
+const friends=['john','peter','susan'];
+const newFriends=[...friends,'abhijit'];
+console.log(friends);
+console.log(newFriends);
 const root = ReactDOM.createRoot(document.getElementById('root'));
+//Copy not a reference{
+const someobject ={
+    name:'John',
+    job: 'Developer'
+};
+const newObj ={
+    ...someobject,location:'India'
+};
+console.log(someobject);
+console.log(newObj);
 
 //root.render(<Greetings />)
 root.render(<BookList />)
